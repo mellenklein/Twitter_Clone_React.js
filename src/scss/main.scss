@@ -1,0 +1,107 @@
+@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "variables";
+@import "../../bower_components/neat/app/assets/stylesheets/neat";
+
+body {
+  font-family: 'Helvetica' sans-serif;
+  margin: 0;
+}
+
+div.wrapper {
+  @include outer-container(100%);
+}
+
+header.top {
+  @include span-columns(12 of 12);
+  // position: fixed;
+  background: white;
+  margin-top: 10px;
+  a {
+    text-decoration: none;
+    color: gray;
+    padding: 10px;
+  }
+  .smallAvatar {
+     border-radius: 5px;
+   }
+   .profileHeader {
+     float: right;
+     input {
+       border-radius: 10px;
+       padding: 5px;
+       border: 1px solid #E1E8ED;
+     }
+   }
+   .twitterBird {
+     margin-left: 280px;
+     font-size: 1.5em;
+     color: $twitterBlue;
+   }
+   #homeBtn {
+     font-size: 1em;
+   }
+}
+
+main {
+  @include outer-container;
+}
+.feed {
+  @include span-columns(6 of 12);
+  display: block;
+  margin: 100px 50px 50px 200px;
+
+
+  img{
+    float:left;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  header.tweetHeader {
+    border-bottom: 1px solid $feedBorder;
+    padding-bottom: 10px;
+
+    p {
+      color: #000000;
+      font-size: 14px;
+    }
+
+     a.fa {
+      text-decoration: none;
+      color: $feedIcons;
+      margin: 10px 15px 5px 15px;
+
+      &:hover {
+        color: $twitterBlue;
+      }
+    }
+  }
+  .tweet {
+    display: block;
+    margin:0px 0px 0px 0px;
+    &:hover {
+      background-color: $feedHoverBg;
+    }
+  }
+  .email {
+    text-decoration: none;
+    color: $twitterBlue;
+    font-weight: bold;
+    float: left;
+    display: block;
+    margin-top: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  time {
+    color: $twitterGray;
+    margin: 0;
+    line-height: 58px;
+    font-size: 12px;
+    padding: 10px 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

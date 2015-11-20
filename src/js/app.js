@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './header';
+import TweetList from './tweet-list'
 
 class App extends React.Component {
   render(){
@@ -9,7 +10,7 @@ class App extends React.Component {
       <div className="wrapper">
         <Header/>
         <main>
-          <h1>Hello world from App!</h1>
+          <TweetList/>
         </main>
       </div>
     )
