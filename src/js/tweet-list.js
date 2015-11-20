@@ -8,6 +8,7 @@ import Tweet from './tweet';
 class TweetList extends React.Component {
   constructor(props) {
     super(props);
+    console.log('something different clown face Jess is so cool!');
   }
 
 
