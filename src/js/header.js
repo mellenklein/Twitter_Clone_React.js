@@ -11,7 +11,7 @@ class Header extends React.Component {
         <div className="profileHeader">
           <input type="text" className="search" placeholder="Search Twitter"/>
           <a id="searchBtn" href="#">Search</a>
-          <a href="#user/:id"><img src="http://www.fillmurray.com/30/30" alt="avatar small" className="smallAvatar"/></a>
+          <a href="#users/:userId"><img src="http://www.fillmurray.com/30/30" alt="avatar small" className="smallAvatar"/></a>
           <a id="logOutBtn" href="#">Log Out</a>
         </div>
       </header>

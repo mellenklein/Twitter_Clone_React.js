@@ -10,7 +10,7 @@ class Tweet extends React.Component {
     let momentTime = moment(date).fromNow();
     return (
       <article className="tweet">
-        <img src="http://www.fillmurray.com/50/50"/>
+        <img src="http://lorempixel.com/50/50/people"/>
         <header className="tweetHeader">
           <a className="email" href="#">{this.props.tweet.email}</a>
           <time>{momentTime}</time>

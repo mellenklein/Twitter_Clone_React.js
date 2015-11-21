@@ -22,25 +22,25 @@ class App extends React.Component {
 
   getTweets() {
     jQuery.ajax('https://twitterapii.herokuapp.com/users.json?include=tweets')
-      .then( response => {
-        var tweets = response.included;
-        var users = response.data;
-        var tweetData = tweets.map(function(tweet){
-          return {
-            id: tweet.id,
-            body: tweet.attributes.body,
-            created_at: tweet.attributes.created_at,
-            userId: tweet.relationships.user.data.id,
-            email: users.filter(function(user) {
-              return user.id === tweet.relationships.user.data.id
-            })[0].attributes.email
-          }
-        });
-        this.setState({
-          hasLoaded: true,
-          tweets: tweetData
-        });
-      });
+          .then( response => {
+            var tweets = response.included;
+            var users = response.data;
+            var tweetData = tweets.map(function(tweet){
+              return {
+                id: tweet.id,
+                body: tweet.attributes.body,
+                created_at: tweet.attributes.created_at,
+                userId: tweet.relationships.user.data.id,
+                email: users.filter(function(user) {
+                  return user.id === tweet.relationships.user.data.id
+                })[0].attributes.email
+              }
+            });
+            this.setState({
+              hasLoaded: true,
+              tweets: tweetData
+            });
+          });
   }
 
   render(){
@@ -59,15 +59,35 @@ class App extends React.Component {
 
 let NotFound = () => {
   return (
-    <h1>
-      404 ERROR: Page not Found!
-    </h1>
+    <div className="wrapper">
+      <h1 className="error">
+        404 ERROR: Page not Found!
+      </h1>
+    </div>
   )
 }
 
 let routes = (
   <Router>
     <Route path='/' component={App}>
+
+    </Route>
+    <Route path='/header' component={Header}>
+
+    </Route>
+    <Route path='/login' component={App}>
+
+    </Route>
+    <Route path='/register' component={App}>
+
+    </Route>
+    <Route path='/dashboard' component={App}>
+
+    </Route>
+    <Route path='/users' component={App}>
+
+    </Route>
+    <Route path='/users/:userId' component={App}>
 
     </Route>
     <Route path='*' component={NotFound} />
