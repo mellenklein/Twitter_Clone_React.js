@@ -6,6 +6,7 @@ import {Router, Route, Link} from 'react-router';
 
 import HeaderHome from './headers/header-home';
 import Dashboard from './dashboard';
+import Users from './users';
 import Register from './register';
 import Login from './login';
 
@@ -50,7 +51,7 @@ let routes = (
     <Route path='/dashboard' component={Dashboard}>
 
     </Route>
-    <Route path='/users' component={App}>
+    <Route path='/users' component={Users}>
 
     </Route>
     <Route path='/users/:userId' component={App}>
