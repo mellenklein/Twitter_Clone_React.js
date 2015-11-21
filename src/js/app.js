@@ -4,56 +4,18 @@ import jQuery from 'jquery';
 import _ from 'lodash';
 import {Router, Route, Link} from 'react-router';
 
-import HeaderDashboard from './headers/header-dashboard';
 import HeaderHome from './headers/header-home';
-import TweetList from './tweet-list';
+import Dashboard from './dashboard';
 import Register from './register';
 import Login from './login';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      hasLoaded: false,
-      tweets: []
-    };
-  }
-  componentDidMount() {
-    this.getTweets();
-  }
-
-  getTweets() {
-    jQuery.ajax('https://twitterapii.herokuapp.com/users.json?include=tweets')
-          .then( response => {
-            var tweets = response.included;
-            var users = response.data;
-            var tweetData = tweets.map(function(tweet){
-              return {
-                id: tweet.id,
-                body: tweet.attributes.body,
-                created_at: tweet.attributes.created_at,
-                userId: tweet.relationships.user.data.id,
-                email: users.filter(function(user) {
-                  return user.id === tweet.relationships.user.data.id
-                })[0].attributes.email
-              }
-            });
-            this.setState({
-              hasLoaded: true,
-              tweets: tweetData
-            });
-          });
-  }
 
   render(){
     return(
       <div className="wrapper">
         <HeaderHome/>
       <main>
-          <TweetList tweets={this.state.tweets}
-                     users={this.state.users}
-                     hasLoaded={this.state.hasLoaded}/>
       </main>
       {this.props.children}
       </div>
@@ -73,10 +35,10 @@ let NotFound = () => {
 
 let routes = (
   <Router>
-    <Route path='/' component={App}>
+    <Route path='/' component={Dashboard}>
 
     </Route>
-    <Route path='/header' component={HeaderDashboard}>
+    <Route path='/header' component={HeaderHome}>
 
     </Route>
     <Route path='/login' component={Login}>
@@ -85,7 +47,7 @@ let routes = (
     <Route path='/register' component={Register}>
 
     </Route>
-    <Route path='/dashboard' component={App}>
+    <Route path='/dashboard' component={Dashboard}>
 
     </Route>
     <Route path='/users' component={App}>
