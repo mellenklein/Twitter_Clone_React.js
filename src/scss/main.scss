@@ -1,5 +1,6 @@
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "variables";
+$visual-grid: true;
 @import "../../bower_components/neat/app/assets/stylesheets/neat";
 
 body {
@@ -13,18 +14,21 @@ div.wrapper {
 
 header.top {
   @include span-columns(12 of 12);
-  // position: fixed;
-  background: white;
   margin-top: 10px;
-  a {
-    text-decoration: none;
-    color: gray;
-    padding: 10px;
+
+  nav.nav {
+    @include span-columns(5 of 12);
   }
-  .smallAvatar {
-     border-radius: 5px;
-   }
+
+  .twitterBird {
+    @include span-columns(2 of 12);
+    padding: 0 0 0 17px;
+    font-size: 1.5em;
+    color: $twitterBlue;
+  }
+
    .profileHeader {
+     @include span-columns(5 of 12);
      float: right;
      input {
        border-radius: 10px;
@@ -32,12 +36,18 @@ header.top {
        border: 1px solid #E1E8ED;
      }
    }
-   .twitterBird {
-     margin-left: 280px;
-     font-size: 1.5em;
-     color: $twitterBlue;
+
+  a {
+    text-decoration: none;
+    color: gray;
+    padding: 10px;
+  }
+
+  .smallAvatar {
+     border-radius: 5px;
    }
-   #homeBtn {
+
+   .homeBtn {
      font-size: 1em;
    }
 }
@@ -45,11 +55,11 @@ header.top {
 main {
   @include outer-container;
 }
+
 .feed {
   @include span-columns(6 of 12);
   display: block;
   margin: 100px 50px 50px 200px;
-
 
   img{
     float:left;
@@ -57,6 +67,7 @@ main {
     border-radius: 5px;
     margin-right: 10px;
   }
+
   header.tweetHeader {
     border-bottom: 1px solid $feedBorder;
     padding-bottom: 10px;
@@ -76,6 +87,7 @@ main {
       }
     }
   }
+
   .tweet {
     display: block;
     margin:0px 0px 0px 0px;
@@ -83,6 +95,7 @@ main {
       background-color: $feedHoverBg;
     }
   }
+
   .email {
     text-decoration: none;
     color: $twitterBlue;
@@ -94,6 +107,7 @@ main {
       text-decoration: underline;
     }
   }
+
   time {
     color: $twitterGray;
     margin: 0;
@@ -105,6 +119,7 @@ main {
     }
   }
 }
+
 h1.error {
   margin: 0 auto;
   padding: 20px;
