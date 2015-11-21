@@ -8,12 +8,8 @@ import Tweet from './tweet';
 class TweetList extends React.Component {
   constructor(props) {
     super(props);
-    console.log('something different clown face Jess is so cool!');
   }
-
-
   render() {
-    console.log(this.props.users);
     let tweets = this.props.tweets.map(tweet => {
       return <Tweet key={tweet.id}
                     tweet={tweet}/>
@@ -25,6 +21,5 @@ class TweetList extends React.Component {
     )
   }
 }
-
 
 export default TweetList;
