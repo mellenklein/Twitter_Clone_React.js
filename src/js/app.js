@@ -4,9 +4,11 @@ import jQuery from 'jquery';
 import _ from 'lodash';
 import {Router, Route, Link} from 'react-router';
 
-import HeaderDashboard from './header-dashboard';
-import HeaderHome from './header-home';
-import TweetList from './tweet-list'
+import HeaderDashboard from './headers/header-dashboard';
+import HeaderHome from './headers/header-home';
+import TweetList from './tweet-list';
+import Register from './register';
+import Login from './login';
 
 class App extends React.Component {
   constructor(props) {
@@ -77,13 +79,13 @@ let routes = (
     <Route path='/header' component={HeaderDashboard}>
 
     </Route>
-    <Route path='/login' component={App}>
+    <Route path='/login' component={Login}>
 
     </Route>
-    <Route path='/register' component={App}>
+    <Route path='/register' component={Register}>
 
     </Route>
-    <Route path='/dashboard' component={App, HeaderDashboard}>
+    <Route path='/dashboard' component={App}>
 
     </Route>
     <Route path='/users' component={App}>
