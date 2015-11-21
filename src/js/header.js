@@ -4,9 +4,11 @@ class Header extends React.Component {
   render() {
     return (
       <header className="top">
-        <a href="#" id="homeBtn"><i className="fa fa-home"></i>Home</a>
-        <a href="#" id="homeBtn"><i className="fa fa-bell"></i>Notifications</a>
-        <a href="#" id="homeBtn"><i className="fa fa-envelope"></i>Messages</a>
+        <nav className="nav">
+          <a href="#" className="homeBtn"><i className="fa fa-home"></i>Home</a>
+          <a href="#" className="homeBtn"><i className="fa fa-bell"></i>Notifications</a>
+          <a href="#" className="homeBtn"><i className="fa fa-envelope"></i>Messages</a>
+        </nav>
         <a href="#" className="twitterBird"><i className="fa fa-twitter"></i></a>
         <div className="profileHeader">
           <input type="text" className="search" placeholder="Search Twitter"/>
