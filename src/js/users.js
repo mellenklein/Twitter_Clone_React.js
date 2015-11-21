@@ -5,6 +5,8 @@ moment().format();
 
 import HeaderDashboard from './headers/header-dashboard';
 import UserList from './user-list';
+import Sidebar from './sidebar';
+
 
 
 class Users extends React.Component {
@@ -43,6 +45,7 @@ class Users extends React.Component {
       <div className="wrapper">
         <HeaderDashboard/>
       <main>
+          <Sidebar />
           <UserList users={this.state.users}
                      hasLoaded={this.state.hasLoaded}/>
       </main>
