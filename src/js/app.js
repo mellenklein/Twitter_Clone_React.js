@@ -4,7 +4,8 @@ import jQuery from 'jquery';
 import _ from 'lodash';
 import {Router, Route, Link} from 'react-router';
 
-import Header from './header';
+import HeaderDashboard from './header-dashboard';
+import HeaderHome from './header-home';
 import TweetList from './tweet-list'
 
 class App extends React.Component {
@@ -46,12 +47,13 @@ class App extends React.Component {
   render(){
     return(
       <div className="wrapper">
-        <Header/>
+        <HeaderHome/>
       <main>
           <TweetList tweets={this.state.tweets}
                      users={this.state.users}
                      hasLoaded={this.state.hasLoaded}/>
       </main>
+      {this.props.children}
       </div>
     )
   }
@@ -72,7 +74,7 @@ let routes = (
     <Route path='/' component={App}>
 
     </Route>
-    <Route path='/header' component={Header}>
+    <Route path='/header' component={HeaderDashboard}>
 
     </Route>
     <Route path='/login' component={App}>
@@ -81,7 +83,7 @@ let routes = (
     <Route path='/register' component={App}>
 
     </Route>
-    <Route path='/dashboard' component={App}>
+    <Route path='/dashboard' component={App, HeaderDashboard}>
 
     </Route>
     <Route path='/users' component={App}>

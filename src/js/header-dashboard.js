@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Header extends React.Component {
+class HeaderDashboard extends React.Component {
   render() {
     return (
       <header className="top">
@@ -21,4 +21,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default HeaderDashboard;
