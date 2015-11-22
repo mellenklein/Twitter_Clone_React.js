@@ -23,42 +23,49 @@ header.top {
 
   nav.nav {
     @include span-columns(5 of 12);
-    margin: 10px;
-    padding: 10px;
+    text-align: left;
+    padding: 20px 0;
   }
 
   .twitterBird {
-    @include span-columns(2 of 12);
-    padding: 12px 0 0 17px;
+    @include span-columns(1 of 12);
+    text-align: right;
+    padding-top: 12px;
     font-size: 1.5em;
     color: $twitterBlue;
   }
 
-   .profileHeader {
-     @include span-columns(5 of 12);
-     float: right;
-     input {
-       border-radius: 10px;
-       padding: 5px;
-       border: 1px solid #E1E8ED;
-     }
-   }
-   .loginHeader {
-     text-align: center;
-     display: inline;
-     margin-left: 15%;
-     color: gray;
-      .login {
-        font-size: 1em;
-        margin-left: 0px;
-      }
-   }
-   .homeHeader {
-     float: right;
-     a {
-       font-size: 1em;
-     }
-   }
+  .profileHeader {
+    @include span-columns(6 of 12);
+    text-align: right;
+    input {
+      vertical-align: top;
+      margin: 17px 0 0 0;
+      border-radius: 10px;
+      padding: 5px;
+      border: 1px solid #E1E8ED;
+    }
+    a#searchBtn, a#logOutBtn {
+      line-height: 40px;
+      padding: 0px 10px;
+    }
+  }
+  .loginHeader {
+    text-align: center;
+    display: inline;
+    margin-left: 15%;
+    color: gray;
+    .login {
+      font-size: 1em;
+      margin-left: 0px;
+    }
+  }
+  .homeHeader {
+    float: right;
+    a {
+      font-size: 1em;
+    }
+  }
   a {
     text-decoration: none;
     color: gray;
@@ -66,13 +73,13 @@ header.top {
   }
 
   .smallAvatar {
-     border-radius: 5px;
-     padding-top: 12px;
-   }
+    border-radius: 5px;
+    margin-top: 14px;
+  }
 
-   .homeBtn {
-     font-size: 1em;
-   }
+  .homeBtn {
+    font-size: 1em;
+  }
 }
 
   ///////////////////////////////

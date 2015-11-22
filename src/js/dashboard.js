@@ -49,7 +49,6 @@ class Dashboard extends React.Component {
         <HeaderDashboard/>
       <main>
           <TweetList tweets={this.state.tweets}
-                     users={this.state.users}
                      hasLoaded={this.state.hasLoaded}/>
       </main>
       </div>

@@ -18,7 +18,7 @@ class App extends React.Component {
         <HeaderHome/>
       <main>
       </main>
-      {this.props.children}
+      // {this.props.children}
       </div>
     )
   }
@@ -37,9 +37,6 @@ let NotFound = () => {
 let routes = (
   <Router>
     <Route path='/' component={Dashboard}>
-
-    </Route>
-    <Route path='/header' component={HeaderHome}>
 
     </Route>
     <Route path='/login' component={Login}>
