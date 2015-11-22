@@ -14,7 +14,8 @@ class Register extends React.Component {
           <input type="text" className="pwd" placeholder="Password"/>
           <input type="text" className="pwd2" placeholder="Confirm password"/>
           <input type="button" className="registerBtn" value="Sign up"/>
-          <a href="#login" className="loginLink">Login</a>
+          <p className="instructions">Already have an account? <a href="#login" className="loginLink">Login »</a></p>
+
         </section>
       </main>
       </div>
