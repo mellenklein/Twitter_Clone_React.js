@@ -47,10 +47,10 @@ class Dashboard extends React.Component {
     return(
       <div className="wrapper">
         <HeaderDashboard/>
-      <main>
+        <main>
           <TweetList tweets={this.state.tweets}
                      hasLoaded={this.state.hasLoaded}/>
-      </main>
+        </main>
       </div>
     )
   }
