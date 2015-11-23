@@ -398,3 +398,8 @@ input.tweetText {
   line-height: 40px;
   padding: 0px 10px;
 }
+.createTweet {
+  @include span-columns(4);
+  @include shift(4);
+  margin-top: 80px;
+}

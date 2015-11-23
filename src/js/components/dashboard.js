@@ -4,6 +4,7 @@ let moment = require('moment');
 moment().format();
 
 import HeaderDashboard from '../headers/header-dashboard';
+import CreateTweet from '../models/create-tweet';
 import TweetList from './tweet-list';
 
 
@@ -13,7 +14,8 @@ class Dashboard extends React.Component {
 
     this.state = {
       hasLoaded: false,
-      tweets: []
+      tweets: [],
+      user: {}
     };
   }
   componentDidMount() {
@@ -38,7 +40,8 @@ class Dashboard extends React.Component {
             });
             this.setState({
               hasLoaded: true,
-              tweets: tweetData
+              tweets: tweetData,
+              user: users[22]
             });
           });
   }
@@ -48,6 +51,7 @@ class Dashboard extends React.Component {
       <div className="wrapper">
         <HeaderDashboard/>
         <main>
+          <CreateTweet user={this.state.user}/>
           <TweetList tweets={this.state.tweets}
                      hasLoaded={this.state.hasLoaded}/>
         </main>
