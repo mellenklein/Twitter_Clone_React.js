@@ -120,6 +120,20 @@ section.users {
   float: right;
   margin-top: 100px;
   padding: 5px;
+  nav.tabs {
+    margin-left: 15px;
+    .tab {
+      color: $nameBlack;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: .8em;
+      padding-right: 15px;
+      &:hover {
+        color: $twitterBlue;
+      }
+    }
+  }
   article.user {
     width: 45%;
     float:left;
@@ -202,7 +216,20 @@ section.users {
   @include shift(3.5);
   display: block;
   margin-top: 60px;
-
+  nav.tabs {
+    margin-top: 50px;
+    .tab {
+      color: $nameBlack;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: .8em;
+      padding-right: 15px;
+      &:hover {
+        color: $twitterBlue;
+      }
+    }
+  }
   img{
     float:left;
     margin-top: 20px;
