@@ -43,6 +43,7 @@ class Register extends React.Component {
       method: 'POST',
       data: {
         attributes: {
+          grant_type: password,
           email: JSON.stringify(person),
           created_at: new Date()
         }
@@ -68,8 +69,8 @@ class Register extends React.Component {
                  onChange={this.handleEmailChange}
                  onSubmit={this.handleRegister}
                  ref="person"/>
-          <input type="password" className="pwd" placeholder="Password"/>
-          <input type="password" className="pwd2" placeholder="Confirm password"/>
+          <input ref="password" type="password" className="pwd" placeholder="Password"/>
+          <input ref="passwordConfirm" type="password" className="pwd2" placeholder="Confirm password"/>
           <input type="submit"
                  className="registerBtn"
                  value="Sign up"/>
