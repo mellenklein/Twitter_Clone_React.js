@@ -45,7 +45,8 @@ class Users extends React.Component {
       <div className="wrapper">
         <HeaderDashboard/>
       <main>
-          <Sidebar />
+          <Sidebar  users={this.state.users}
+                     hasLoaded={this.state.hasLoaded}/>
           <UserList users={this.state.users}
                      hasLoaded={this.state.hasLoaded}/>
       </main>

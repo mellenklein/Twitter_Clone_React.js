@@ -314,3 +314,48 @@ section.regForm {
     // display: none;
   }
 }
+aside.sidebar {
+  @include span-columns(4);
+  margin-top: 60px;
+  article.userDetail {
+    margin: 10px;
+    border: 1px solid $feedBorder;
+    border-radius: 15px;
+    img.avatar {
+      position: relative;
+      width: 100%;
+      border: 3px solid white;
+      border-radius: 15px;
+      display: inline-block;
+    }
+    header.userDetailHeader {
+      padding-left: 15px;
+      .name {
+        font-size: 1.2em;
+        color: $nameBlack;
+        font-weight: bolder;
+        margin: 1px;
+      }
+      .email {
+        display: block;
+        text-decoration: none;
+        color: $twitterGray;
+        font-size: .75em;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      time {
+        color: $lighter-gray;
+        font-size: .9em;
+        font-weight: lighter;
+      }
+      .fa {
+        padding: 15px;
+        color: $twitterGray;
+        text-decoration: none;
+        float: right;
+      }
+    }
+  }
+}
