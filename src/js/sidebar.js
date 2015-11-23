@@ -10,13 +10,8 @@ class Sidebar extends React.Component {
     super(props);
   }
   render() {
-    let user = this.props.users.map(user => {
-      return <User key={user.id}
-                    user={user}/>
-    });
     return (
       <aside className="sidebar">
-        {user}
       </aside>
     )
   }

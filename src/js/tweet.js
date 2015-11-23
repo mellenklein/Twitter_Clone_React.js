@@ -5,7 +5,6 @@ moment().format();
 
 class Tweet extends React.Component {
   render() {
-    console.log(this);
     let date = this.props.tweet.created_at;
     let momentTime = moment(date).fromNow();
     return (
