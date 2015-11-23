@@ -3,7 +3,7 @@ import jQuery from 'jquery';
 let moment = require('moment');
 moment().format();
 
-import HeaderDashboard from './headers/header-dashboard';
+import HeaderDashboard from '../headers/header-dashboard';
 import TweetList from './tweet-list';
 
 

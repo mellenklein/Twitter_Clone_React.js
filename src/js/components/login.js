@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import CreateUser from '../models/create-user';
 import jQuery from 'jquery';
+import createLocation from 'history/lib/createLocation';
 
-import HeaderLogin from './headers/header-login';
+import HeaderLogin from '../headers/header-login';
 
 class Login extends React.Component {
   handleLoginClick() {

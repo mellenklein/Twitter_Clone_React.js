@@ -5,10 +5,10 @@ import _ from 'lodash';
 import {Router, Route, Link} from 'react-router';
 
 import HeaderHome from './headers/header-home';
-import Dashboard from './dashboard';
-import Users from './users';
-import Register from './register';
-import Login from './login';
+import Dashboard from './components/dashboard';
+import Users from './components/users';
+import Register from './components/register';
+import Login from './components/login';
 
 class App extends React.Component {
 
