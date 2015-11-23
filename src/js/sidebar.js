@@ -12,7 +12,7 @@ class Sidebar extends React.Component {
   render() {
     return (
       <aside className="sidebar">
-        
+        <h1>I am a sidebar</h1>
       </aside>
     )
   }
