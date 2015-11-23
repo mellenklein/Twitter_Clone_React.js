@@ -295,7 +295,7 @@ h1.error {
   padding: 20px;
   color: #f00;
 }
-section.form,
+form.form,
 .regForm {
   @include span-columns(4);
   @include shift(4);

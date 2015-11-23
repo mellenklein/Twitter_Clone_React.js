@@ -27,10 +27,12 @@ class Login extends React.Component {
       }, (error, data) => {
         if (!error) {
           console.log(CreateUser.isLoggedIn());
+          // this.transitionTo('#/dashboard');
+          this.refs.email.value = '';
+          this.refs.password.value = '';
         } else {
           alert('There was an error with your information.');
         }
-        email = '';
       });
     } else {
       alert('Try again!');
@@ -42,12 +44,12 @@ class Login extends React.Component {
       <div className="wrapper">
         <HeaderLogin/>
       <main>
-        <section className="form">
+        <form className="form"
+              onSubmit={this.handleLogin}>
           <input type="text"
                  className="email"
                  placeholder="Email or username"
-                 ref="email"
-                 onSubmit={this.handleLogin}/>
+                 ref="email"/>
           <input type="password"
                  className="pwd"
                  placeholder="Password"
@@ -58,7 +60,7 @@ class Login extends React.Component {
                  value="Log in"
                  onClick={this.handleLogin}/>
                <p className="instructions">Don't have an account? <a href="#/register" className="register">Sign up »</a></p>
-        </section>
+        </form>
       </main>
       </div>
     )
