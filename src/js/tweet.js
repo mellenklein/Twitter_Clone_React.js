@@ -7,9 +7,11 @@ class Tweet extends React.Component {
   render() {
     let date = this.props.tweet.created_at;
     let momentTime = moment(date).fromNow();
+    let avatarUrl = `http://lorempixel.com/50/50/people/?${this.props.tweet.userId}`;
+
     return (
       <article className="tweet">
-        <img src="http://lorempixel.com/50/50/people"/>
+        <img src={avatarUrl} alt="avatar"/>
         <header className="tweetHeader">
           <a className="email" href="#">{this.props.tweet.email}</a>
           <time>{momentTime}</time>

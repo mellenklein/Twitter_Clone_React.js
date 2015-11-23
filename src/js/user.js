@@ -5,7 +5,6 @@ moment().format();
 
 class User extends React.Component {
   render() {
-    console.log(this.props);
     let date = this.props.user.created_at;
     let momentTime = new Date(date).toDateString();
     let avatarUrl = `http://lorempixel.com/50/50/people/?${this.props.user.userId}`;
