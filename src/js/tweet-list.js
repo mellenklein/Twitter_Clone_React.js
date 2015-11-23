@@ -16,6 +16,12 @@ class TweetList extends React.Component {
     });
     return (
       <section className="feed">
+        <nav className="tabs">
+          <a href="#/dashboard" className="tab"
+             onClick={this.toggleActive}>My Tweets</a>
+          <a href="#/users" className="tab"
+             onClick={this.toggleActive}>Followers</a>
+        </nav>
         {tweets}
       </section>
     )
