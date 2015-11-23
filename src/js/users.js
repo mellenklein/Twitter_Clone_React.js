@@ -15,7 +15,8 @@ class Users extends React.Component {
 
     this.state = {
       hasLoaded: false,
-      users: []
+      users: [],
+      profile: [],
     };
   }
   componentDidMount() {
@@ -52,6 +53,6 @@ class Users extends React.Component {
       </div>
     )
   }
-}
+};
 
 export default Users;
