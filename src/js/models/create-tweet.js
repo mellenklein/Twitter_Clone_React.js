@@ -5,8 +5,7 @@ class CreateTweet extends React.Component {
     console.log('you created a tweet!')
   }
   render() {
-    let avatarUrl = `http://lorempixel.com/32/32/people/?${this.props.user.id}`;
-    console.log(this.props.user);
+    let avatarUrl = `http://lorempixel.com/40/40/people/?${this.props.user.id}`;
     return (
       <section className="createTweet">
         <img src={avatarUrl} className="smallAvatar" alt="avatar"/>
