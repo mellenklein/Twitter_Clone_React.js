@@ -10,10 +10,6 @@ class Register extends React.Component {
     super(props);
 
     this.handleRegister = this.handleRegister.bind(this);
-
-    // this.state = {
-    //   users: {data: []}
-    // };
   }
 
   handleRegister(e){
@@ -70,14 +66,14 @@ class Register extends React.Component {
                  placeholder="Email"
                  onChange={this.handleEmailChange}
                  onSubmit={this.handleRegister}
-                 ref="person"/>
+                 ref="email"/>
           <input ref="password" type="password" className="pwd" placeholder="Password"/>
           <input ref="passwordConfirm" type="password" className="pwd2" placeholder="Confirm password"/>
           <input type="submit"
                  className="registerBtn"
                  value="Sign up"
                  onClick={this.handleRegister}/>
-          <p className="instructions">Already have an account? <a href="#login" className="loginLink">Login »</a></p>
+               <p className="instructions">Already have an account? <a href="#/login" className="loginLink">Login »</a></p>
         </form>
       </main>
       </div>
