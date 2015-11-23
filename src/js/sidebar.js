@@ -1,6 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
-var moment = require('moment');
+let moment = require('moment');
 moment().format();
 
 import User from './user';
@@ -12,7 +12,6 @@ class Sidebar extends React.Component {
   render() {
     return (
       <aside className="sidebar">
-        
       </aside>
     )
   }

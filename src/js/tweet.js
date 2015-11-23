@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import jQuery from 'jquery';
-import _ from 'lodash';
-var moment = require('moment');
+let moment = require('moment');
 moment().format();
 
 class Tweet extends React.Component {
