@@ -7,47 +7,52 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      users: [],
-      email: ''
-    };
-    this.handleRegisterClick = this.handleRegisterClick.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleRegister = this.handleRegister.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
+
+    this.state = {
+      users: {data: []}
+    };
+  }
+
+  handleAdd(person) {
+    let users = this.state.users;
+    users.unshift(person);
   }
 
   handleEmailChange(e){
     this.setState({email: e.target.value});
   }
-  handleRegisterClick(e){
+  handleRegister(e){
     console.log('you clicked the register btn');
-    e.preventDefault();
     var email = this.state.email.trim();
     console.log(email);
     if(!email) {
       return;
     }
-    this.sendUser(this.state);
+    let person = JSON.stringify(this.refs.person.value);
+    console.log(person);
+    this.sendUser(person);
+    this.refs.person.value = '';
     this.setState({email: ''});
-    jQuery('.email').attr('value', '');
   }
-  // componentWillMount() {
-  //   this.sendUser();
-  // }
 
   sendUser(person) {
-    jQuery.ajax({
-      url: 'https://twitterapii.herokuapp.com/users.json',
-      dataType: 'json',
-      type: 'POST',
-      data: person,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(e) {
-        console.log(e);
-      }.bind(this)
-  });
-
+    let options = {
+      method: 'POST',
+      data: {
+        attributes: {
+          email: JSON.stringify(person),
+          created_at: new Date()
+        }
+      },
+      contentType: "application/json; charset=utf-8",
+      dataType: "json"
+    };
+    jQuery.ajax('https://twitterapii.herokuapp.com/users.json', options).then(function(response) {
+      this.props.handleAdd(response);
+    });
   }
 
   render() {
@@ -56,11 +61,13 @@ class Register extends React.Component {
         <HeaderRegister/>
       <main>
         <form className="regForm"
-              onSubmit={this.handleRegisterClick}>
+              onSubmit={this.handleRegister}>
           <input type="text"
                  className="email"
                  placeholder="Email"
-                 onChange={this.handleEmailChange}/>
+                 onChange={this.handleEmailChange}
+                 onSubmit={this.handleRegister}
+                 ref="person"/>
           <input type="password" className="pwd" placeholder="Password"/>
           <input type="password" className="pwd2" placeholder="Confirm password"/>
           <input type="submit"
