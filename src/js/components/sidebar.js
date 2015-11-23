@@ -16,7 +16,7 @@ class Sidebar extends React.Component {
     });
     return (
       <aside className="sidebar">
-        {users[0]}
+        {users[23]}
       </aside>
     )
   }
