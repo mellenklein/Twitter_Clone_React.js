@@ -1,6 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
-var moment = require('moment');
+let moment = require('moment');
 moment().format();
 
 import HeaderDashboard from './headers/header-dashboard';
@@ -26,8 +26,8 @@ class Users extends React.Component {
   getUsers() {
     jQuery.ajax('https://twitterapii.herokuapp.com/users.json')
         .then( response => {
-          var users = response.data;
-          var userData = users.map(function(user){
+          let users = response.data;
+          let userData = users.map(function(user){
             return {
               userId: user.id,
               created_at: user.attributes.created_at,

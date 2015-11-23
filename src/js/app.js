@@ -18,7 +18,7 @@ class App extends React.Component {
         <HeaderHome/>
       <main>
       </main>
-      // {this.props.children}
+      {this.props.children}
       </div>
     )
   }
