@@ -107,6 +107,13 @@ main {
   height: 100%;
 }
 
+aside.sidebar {
+  @include span-columns(4);
+  margin-top: 100px;
+  float: left;
+  display:block;
+}
+
 section.users {
   @include span-columns(8);
   display: block;
@@ -262,7 +269,7 @@ h1.error {
   color: #f00;
 }
 section.form,
-section.regForm {
+.regForm {
   @include span-columns(4);
   @include shift(4);
   @include vertical-align();
@@ -294,7 +301,7 @@ section.regForm {
       }
     }
   }
-  a.login,
+  .login,
   .registerBtn {
     color: white;
     text-decoration: none;
