@@ -15,9 +15,12 @@ class CreateMsg {
       url: url,
       method: 'POST',
       data: {
-        user: data
+        tweet: {
+          data
+        }
       }
     };
+    console.log(options);
 
     $.ajax(options).then(response => {
       done(null, response);
