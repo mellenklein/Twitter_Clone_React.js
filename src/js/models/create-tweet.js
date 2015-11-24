@@ -15,7 +15,7 @@ class CreateTweet extends React.Component {
 
     if (msg) {
       CreateMsg.postTweet({
-        body: msg,
+        'body': msg,
       }, (error, data) => {
         if (!error) {
           //Automatically send user to login screen

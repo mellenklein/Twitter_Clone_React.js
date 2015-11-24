@@ -20,6 +20,7 @@ html, body {
 
 body {
   font-family: 'Helvetica' sans-serif;
+  background: #F5F8FA;
 }
 #app {
   height: 100%;
@@ -105,6 +106,7 @@ main {
   @include outer-container;
   height: 100%;
   position: relative;
+  background: #F5F8FA;
   top: 70px;
 }
 
@@ -140,6 +142,9 @@ section.users {
     display: inline-block;
     border: 1px solid $feedBorder;
     border-radius: 10px;
+    &:hover {
+      background: #fff;
+    }
     img.coverPic {
       width: 100%;
       border-radius: 10px 10px 0 0;
@@ -351,6 +356,7 @@ aside.sidebar {
     margin: 10px;
     border: 1px solid $feedBorder;
     border-radius: 15px;
+    background: #fff;
     img.avatar {
       position: relative;
       width: 100%;
