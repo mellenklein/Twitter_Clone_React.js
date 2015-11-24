@@ -15,12 +15,15 @@ class CreateMsg {
       url: url,
       method: 'POST',
       data: {
-        tweet: {
-          data
-        }
+        'tweet': data
       }
     };
-    console.log(options);
+
+    $.ajaxSetup({
+      header: {
+        'Authorization': 'Bearer' + this.access_token
+      }
+    });
 
     $.ajax(options).then(response => {
       done(null, response);
