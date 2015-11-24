@@ -1,12 +1,11 @@
 import React, { PropTypes } from 'react';
-import CreateUser from '../models/create-user';
 import createLocation from 'history/lib/createLocation';
 import jQuery from 'jquery';
 
 import HeaderLogin from '../headers/header-login';
+import CreateUser from '../models/create-user';
 
 class Login extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -15,7 +14,6 @@ class Login extends React.Component {
 
   handleLogin(e) {
     e.preventDefault();
-    console.log('you clicked the login btn!');
 
     let email = this.refs.email.value;
     let password = this.refs.password.value;
@@ -26,7 +24,6 @@ class Login extends React.Component {
         password: password
       }, (error, data) => {
         if (!error) {
-          console.log(CreateUser.isLoggedIn());
           // this.transitionTo('#/dashboard');
           this.refs.email.value = '';
           this.refs.password.value = '';

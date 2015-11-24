@@ -10,9 +10,9 @@ class CreateTweet extends React.Component {
   }
   handleCreation(e) {
     e.preventDefault();
-    console.log('you created a tweet!');
 
     let msg = this.refs.msg.value;
+
     if (msg) {
       CreateMsg.postTweet({
         body: msg,
