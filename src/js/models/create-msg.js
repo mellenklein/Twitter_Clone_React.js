@@ -20,10 +20,16 @@ class CreateMsg {
     };
 
     $.ajax(options).then(response => {
+      let {access_token, refresh_token, expires_in, created_at} = response;
+      this.access_token = access_token;
+
       done(null, response);
     }).fail(error => {
       done(error);
     });
+    this.state = {
+      access_token: this.token
+    }
   }
 
   logout() {
