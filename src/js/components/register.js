@@ -36,24 +36,6 @@ class Register extends React.Component {
     }
   }
 
-  // sendUser(person) {
-  //   let options = {
-  //     method: 'POST',
-  //     data: {
-  //       attributes: {
-  //         grant_type: password,
-  //         email: JSON.stringify(person),
-  //         created_at: new Date()
-  //       }
-  //     },
-  //     contentType: "application/json; charset=utf-8",
-  //     dataType: "json"
-  //   };
-  //   jQuery.ajax('https://twitterapii.herokuapp.com/users.json', options).then(function(response) {
-  //     this.props.handleAdd(response);
-  //   });
-  // }
-
   render() {
     return (
       <div className="wrapper">
