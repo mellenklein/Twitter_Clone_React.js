@@ -14,15 +14,16 @@ class CreateMsg {
     let options = {
       url: url,
       method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${User.access_token}`
+      }
       data: {
         'tweet': data
       }
     };
 
-    $.ajaxSetup({
-      header: {
-        'Authorization': 'Bearer' + this.access_token
-      }
+    return $.ajaxSetup(options).then(response => {
+      done(null, response);
     });
 
     $.ajax(options).then(response => {
