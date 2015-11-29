@@ -49,6 +49,9 @@ class CreateUser {
     }).fail(error => {
       done(error);
     });
+    this.state = {
+      access_token: access_token
+    }
   }
   logout() {
     this.token = null;

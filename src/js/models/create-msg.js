@@ -14,22 +14,29 @@ class CreateMsg {
     let options = {
       url: url,
       method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${User.access_token}`
+      }
       data: {
         'tweet': data
       }
     };
 
-    $.ajaxSetup({
-      header: {
-        'Authorization': 'Bearer' + this.access_token
-      }
+    return $.ajaxSetup(options).then(response => {
+      done(null, response);
     });
 
     $.ajax(options).then(response => {
+      let {access_token, refresh_token, expires_in, created_at} = response;
+      this.access_token = access_token;
+
       done(null, response);
     }).fail(error => {
       done(error);
     });
+    this.state = {
+      access_token: this.token
+    }
   }
 
   logout() {
